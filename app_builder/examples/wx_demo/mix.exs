@@ -46,12 +46,13 @@ defmodule WxDemo.MixProject do
               ]
             ]
           ],
+          module: WxDemo.Window,
           macos: [
+            app_type: :agent,
             build_dmg: macos_notarization != nil,
             notarization: macos_notarization
           ],
           windows: [
-            server: WxDemo,
             build_installer: true
           ]
         ]

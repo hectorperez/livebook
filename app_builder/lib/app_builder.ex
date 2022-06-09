@@ -25,6 +25,7 @@ defmodule AppBuilder do
       all: [
         :name,
         :icon_path,
+        :module,
         url_schemes: [],
         document_types: [],
         additional_paths: []

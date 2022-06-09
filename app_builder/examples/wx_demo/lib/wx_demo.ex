@@ -23,6 +23,10 @@ defmodule WxDemo.Window do
   @wx_id_exit 5006
   @wx_id_osx_hide 5250
 
+  def open_url(url) do
+    IO.inspect({:open_url, url})
+  end
+
   def start_link(_) do
     {:wx_ref, _, _, pid} = :wx_object.start_link({:local, __MODULE__}, __MODULE__, [], [])
     {:ok, pid}
@@ -61,7 +65,8 @@ defmodule WxDemo.Window do
 
     case os do
       :macos ->
-        :wx.subscribe_events()
+        # :wx.subscribe_events()
+        :ok
 
       :windows ->
         windows_to_wx(System.get_env("WXDEMO_URL") || "")
