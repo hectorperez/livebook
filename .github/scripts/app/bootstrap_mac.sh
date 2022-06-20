@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e pipefail
 
 main() {
   export MAKEFLAGS=-j$(getconf _NPROCESSORS_ONLN)
